@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new CalcPage();
+            MainPage = new NavigationPage(new UserInputPage());
         }
     }
 }

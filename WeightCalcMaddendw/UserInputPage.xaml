@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeightCalcMaddendw.UserInputPage"
+             Title="BMI Calculator">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Select Your Gender" FontSize="20" HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="30">
+
+                <Image x:Name="MaleImage"
+                       Source="male.png"
+                       HeightRequest="120">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMaleTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image x:Name="FemaleImage"
+                       Source="female.png"
+                       HeightRequest="120">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFemaleTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+            </HorizontalStackLayout>
+
+            <Label Text="Weight (lbs)" FontSize="18"/>
+            <Label x:Name="WeightLabel" Text="90 lbs"/>
+            <Slider x:Name="WeightSlider"
+                    Minimum="0"
+                    Maximum="300"
+                    Value="90"
+                    ValueChanged="OnWeightChanged"/>
+
+            <Label Text="Height (inches)" FontSize="18"/>
+            <Label x:Name="HeightLabel" Text="50 in"/>
+            <Slider x:Name="HeightSlider"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="50"
+                    ValueChanged="OnHeightChanged"/>
+
+            <Button Text="Calculate BMI"
+                    Clicked="OnCalculateClicked"
+                    BackgroundColor="Blue"
+                    TextColor="White"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
